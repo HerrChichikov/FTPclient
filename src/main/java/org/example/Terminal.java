@@ -1,10 +1,16 @@
 package org.example;
+import org.json.simple.parser.ParseException;
+
 import java.io.*;
 import java.util.Scanner;
 public class Terminal {
-    static void terminal() throws IOException {
+    public static String file = null;
+
+    static void terminal() throws IOException, ParseException {
         Scanner in = new Scanner(System.in);
         FtpClient N = new FtpClient();
+        Parser parser = new Parser();
+
 
         String port = "21";
         String server = "192.168.0.102";
@@ -32,7 +38,7 @@ public class Terminal {
 //        String load = in.nextLine();
 
         System.out.print("Введите имя файла (ftp://login@x.x.x.x/ + ваш ответ): ");
-        String file = (in.nextLine());
+        file = (in.nextLine());
         String unload = ("ftp://" + login + "@" + server + "/");
 
 
@@ -62,8 +68,15 @@ public class Terminal {
         switch (num){
             case 1:
                 System.out.println("Ты нажал 1, молодец!");
+
+                System.out.println(parser.parse());
+
             case 2:
                 System.out.println("Ты нажал 2, молодец!");
+
+                Convert d = new Convert();
+                d.Convert();
+
             case 3:
                 System.out.println("Ты нажал 3, молодец!");
             case 4:
@@ -80,4 +93,10 @@ public class Terminal {
 
 
 
-}}
+}
+
+    String getFile(){
+        return file;
+    }
+
+}
