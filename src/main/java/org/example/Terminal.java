@@ -12,34 +12,24 @@ public class Terminal {
         Parser parser = new Parser();
 
 
-        String port = "21";
-        String server = "localhost";
-        String login = "max";
-        String password = "1";
 
 
 
-//        System.out.println("Введите порт: ");
-//        String port = in.nextLine();
-//
-//        System.out.print("Введите сервер: ");
-//        String server = in.nextLine();
-//
-//        System.out.print("Введите логин: ");
-//        String login = in.nextLine();
-//
-//        System.out.print("Введите пароль: ");
-//        String password = in.nextLine();
-//
-/*        System.out.print("Введите путь до файла (ftp://login@x.x.x.x/ + ваш ответ): ");
-        String unload = ("ftp://" + login + "@" + server + "/" + in.nextLine());              */
+       System.out.println("Введите порт: ");
+      String port = in.nextLine();
 
-//        System.out.print("Введите путь куда хотите скачать файл: (/home/ваше имя/Downloads/)"); Возможно даже не пригодится, если повезёт
-//        String load = in.nextLine();
+       System.out.print("Введите сервер: ");
+       String server = in.nextLine();
+
+       System.out.print("Введите логин: ");
+       String login = in.nextLine();
+
+       System.out.print("Введите пароль: ");
+        String password = in.nextLine();
 
         System.out.print("Введите имя файла (ftp://login@x.x.x.x/ + ваш ответ): ");
         file = (in.nextLine());
-        String unload = ("ftp://" + login + "@" + server + "/");
+
 
 
         N.setPort(Integer.parseInt(port));

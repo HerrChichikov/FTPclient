@@ -13,11 +13,9 @@ import static org.example.Terminal.terminal;
 public class App
 {
     public static void main( String[] args ) throws IOException, ParseException {
-        System.out.println( "Hello World!1" );
 
         terminal();
 
-        System.out.println( "Hello World!2" );
     }
 
 
