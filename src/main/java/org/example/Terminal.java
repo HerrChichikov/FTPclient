@@ -13,7 +13,7 @@ public class Terminal {
 
 
         String port = "21";
-        String server = "192.168.0.102";
+        String server = "localhost";
         String login = "max";
         String password = "1";
 
@@ -57,36 +57,57 @@ public class Terminal {
             ex.printStackTrace();}
 
 
-        System.out.println("Выберите пункт меню: \n" +
-                "1. Получение списка студентов по имени\n" +
-                "2. Получение информации о студенте по id \n" +
-                "3. Добавление студента ( id генерируется автоматически)\n" +
-                "4. Удаление студента по id\n" +
-                "5. Завершение работы");
-        int num = in.nextInt();
 
-        switch (num){
-            case 1:
-                System.out.println("Ты нажал 1, молодец!");
 
-                System.out.println(parser.parse());
+        while (true) {
+            System.out.println("Выберите пункт меню: \n" +
+                    "1. Получение списка студентов по имени\n" +
+                    "2. Получение информации о студенте по id \n" +
+                    "3. Добавление студента ( id генерируется автоматически)\n" +
+                    "4. Удаление студента по id\n" +
+                    "5. Завершение работы");
+            int num = in.nextInt();
+            switch (num){
+                case 1:
+                    System.out.println("Ты нажал 1, молодец!");
 
-            case 2:
-                System.out.println("Ты нажал 2, молодец!");
+                    System.out.println(parser.parse());
 
-                Convert d = new Convert();
-                d.Convert();
+                    break;
 
-            case 3:
-                System.out.println("Ты нажал 3, молодец!");
-            case 4:
-                System.out.println("Ты нажал 4, молодец!");
-            case 5:
-                System.out.println("Ты нажал 5, молодец! Пока!");
-                File file1 = new File(file);
-                N.putFileToPath(file1, file);
-                System. exit(0);
+                case 2:
+                    System.out.println("Ты нажал 2, молодец!");
+
+                    Finder finder = new Finder();
+
+                    finder.parse();
+
+                    break;
+
+                case 3:
+                    System.out.println("Ты нажал 3, молодец!");
+                    Convert d = new Convert();
+                    d.Convert();
+
+                    break;
+
+                case 4:
+                    System.out.println("Ты нажал 4, молодец!");
+
+                    Deleter deleter = new Deleter();
+                    deleter.parse();
+
+                    break;
+                case 5:
+                    System.out.println("Ты нажал 5, молодец! Пока!");
+                    File file1 = new File(file);
+                    N.putFileToPath(file1, file);
+                    System. exit(0);
+
+                    break;
+            }
         }
+
 
 
 

@@ -1,7 +1,5 @@
 package org.example;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -10,7 +8,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -59,7 +56,7 @@ public class Convert {
 
         listToUp.add(stud);
 
-      //  mapper.writeValue(new File(file.getFile()), listToUp);
+
 
         studentsJSON.clear();
 
@@ -69,7 +66,7 @@ public class Convert {
 
 
 
-       // String UpToStud = mapper.writeValueAsString(listToUp);
+
 
         mapper.writeValue(new File(file.getFile()), JObj);
 
